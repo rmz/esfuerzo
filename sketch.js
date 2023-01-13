@@ -2,34 +2,34 @@
 
 // Collision detection and resolution
 
-// Move the mouse, the asterisk responds to overlaps with the gray circle
-// it collides with the box and displaces the cloud
+// Move the mouse, the maya responds to overlaps with the gray mayaStill
+// it collides with the gula and displaces the cosmo
 
-let box, asterisk, cloud, circle;
+let gula, maya, cosmo, mayaStill;
 
 function preload() {
-	circle = new Sprite(400, 200, 100, 'static');
-	circle.addAni('img/mayanStanding0.png', 1);
-    circle.ani.frameDelay = 10;
-	circle.overlaps(allSprites);
+	mayaStill = new Sprite(600, 200, 100, 250, 'static');
+	mayaStill.addAni('https://raw.githubusercontent.com/rmz/esfuerzo/main/img/mayanStanding0.png', 1);
+    mayaStill.ani.frameDelay = 10;
+	mayaStill.overlaps(allSprites);
 
-	box = new Sprite(200, 200, 75, 120, 'static');
-	box.addAni('img/fatMan01.png', 3);
+	gula = new Sprite(200, 200, 180, 180, 'static');
+	gula.addAni('https://raw.githubusercontent.com/rmz/esfuerzo/main/img/fatMan01.png', 3);
 
-	cloud = new Sprite(600, 200, 100);
-	cloud.addAni('img/constelation01.png', 3);
-	cloud.ani.frameDelay = 10;
+	cosmo = new Sprite(900, 200, 160);
+	cosmo.addAni('https://raw.githubusercontent.com/rmz/esfuerzo/main/img/constelation320_00.png', 3);
+	cosmo.ani.frameDelay = 10;
 	// higher drag increases the force required to displace a sprite
-	cloud.drag = 100;
+	cosmo.drag = 100;
 	// increasing rotationDrag or angularDrag increases the force
 	// required to rotate a sprite
-	cloud.rotationDrag = 100;
+	cosmo.rotationDrag = 100;
 
-	asterisk = new Sprite(400, 200, 120);
+	maya = new Sprite(600, 200, 100, 250);
 	// if you don't give the animation a name, the name "default" will be used
-	asterisk.addAni('mayanRunner00.png', 3);
-	asterisk.addAni('round', 'mayanStanding1.png', 1);
-	asterisk.rotationDrag = 2;
+	maya.addAni('https://raw.githubusercontent.com/rmz/esfuerzo/main/img/mayanRunner00.png', 3);
+	maya.addAni('round', 'https://raw.githubusercontent.com/rmz/esfuerzo/main/img/mayanStanding1.png', 1);
+	maya.rotationDrag = 2;
 }
 
 function setup() {
@@ -40,12 +40,12 @@ function setup() {
 function draw() {
 	background(255);
 
-	asterisk.moveTowards(mouse);
+	maya.moveTowards(mouse);
 
-	if (asterisk.overlapping(circle)) {
-		asterisk.ani = 'round';
+	if (maya.overlapping(mayaStill)) {
+		maya.ani = 'round';
 	} else {
-		asterisk.ani = 'default';
+		maya.ani = 'default';
 	}
 
 	// if debug is set to true the sprite's physic's body, center,
