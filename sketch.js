@@ -1,7 +1,3 @@
-//console.log('running collisions.js');
-
-// Collision detection and resolution
-
 // Move the mouse, the maya responds to overlaps with the gray mayaStill
 // it collides with the gula and displaces the cosmo
 
@@ -14,10 +10,10 @@ function preload() {
 	mayaStill.overlaps(allSprites);
 
 	gula = new Sprite(200, 200, 180, 180, 'static');
-	gula.addAni('https://raw.githubusercontent.com/rmz/esfuerzo/main/img/fatMan01.png', 3);
+	gula.addAni('https://raw.githubusercontent.com/rmz/esfuerzo/main/img/fatMan01.png', 5);
 
-	cosmo = new Sprite(900, 200, 160);
-	cosmo.addAni('https://raw.githubusercontent.com/rmz/esfuerzo/main/img/constelation320_00.png', 3);
+	cosmo = new Sprite(900, 200, 128);
+	cosmo.addAni('https://raw.githubusercontent.com/rmz/esfuerzo/main/img/constelation256_01.png', 3);
 	cosmo.ani.frameDelay = 10;
 	// higher drag increases the force required to displace a sprite
 	cosmo.drag = 100;
