@@ -1,94 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/addons/p5.sound.min.js"></script>
+    <!-- planck -->
+    <script src="https://cdn.jsdelivr.net/npm/planck@latest/dist/planck.min.js"></script>
+    <!-- Version 3 of p5.play -->
+    <script src="https://p5play.org/v3/p5.play.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
-    <title></title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
-    <script src="https://p5play.org/v3/planck.min.js"></script>	
-    <script src="p5.play.js"></script>
-    <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-        }
 
-        #defaultCanvas {
-            margin: 0px;
-            padding: 0px;
-        }
-
-        #myP5 {
-            /*left:30%;
-            height:80%;
-            position:fixed;*/
-        }
-
-        #container {
-            width: 800px;
-            margin: auto;
-        }
-    </style>
-</head>
-<body>
-    <div id="container">
-        <div id="myP5"></div>
-
-    </div>
-</body>
-
-<script>
-    //console.log('running collisions.js');
-
-// Collision detection and resolution
-
-// Move the mouse, the asterisk responds to overlaps with the gray circle
-// it collides with the box and displaces the cloud
-
-let box, asterisk, cloud, circle;
-
-function preload() {
-	circle = new Sprite(400, 200, 100, 'static');
-    circle.addAni('img/mayanStanding0.png');
-	circle.overlaps(allSprites);
-
-	box = new Sprite(200, 200, 75, 120, 'static');
-    box.addAni('img/fatMan01.png', 5);
-
-	cloud = new Sprite(600, 200, 100);
-	cloud.addAni('img/constelation01', 3);
-	cloud.ani.frameDelay = 10;
-	// higher drag increases the force required to displace a sprite
-	cloud.drag = 100;
-	// increasing rotationDrag or angularDrag increases the force
-	// required to rotate a sprite
-	cloud.rotationDrag = 100;
-
-	asterisk = new Sprite(400, 200, 120);
-	// if you don't give the animation a name, the name "default" will be used
-	asterisk.addAni('img/mayanRunner00.png', 7);
-    asterisk.addAni('round', 'img/mayanRunner01.png', 8);
-	asterisk.rotationDrag = 2;
-}
-
-function setup() {
-	new Canvas(800, 400);
-}
-
-function draw() {
-	background(255);
-
-	asterisk.moveTowards(mouse);
-
-	if (asterisk.overlapping(circle)) {
-		asterisk.ani = 'round';
-	} else {
-		asterisk.ani = 'default';
-	}
-
-	// if debug is set to true the sprite's physic's body, center,
-	// and layer are visualized
-	allSprites.debug = mouse.pressing();
-}
-
-</script>
+  </head>
+  <body>
+    <main>
+    </main>
+      
+    <script src="sketch.js"></script>
+  </body>
 </html>
